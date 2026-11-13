@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@keyframes jarvis-spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes jarvis-spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes jarvis-breathe {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.72;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes jarvis-pulse-ring {
+  0% {
+    transform: scale(0.88);
+    opacity: 0.65;
+  }
+  70% {
+    transform: scale(1.22);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.22);
+    opacity: 0;
+  }
+}
+
+.animate-jarvis-spin {
+  animation: jarvis-spin-slow 5.5s linear infinite;
+}
+
+.animate-jarvis-spin-reverse {
+  animation: jarvis-spin-reverse 3.8s linear infinite;
+}
+
+.animate-jarvis-breathe {
+  animation: jarvis-breathe 1.9s ease-in-out infinite;
+}
+
+.animate-jarvis-pulse-ring {
+  animation: jarvis-pulse-ring 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-jarvis-spin,
+  .animate-jarvis-spin-reverse,
+  .animate-jarvis-breathe,
+  .animate-jarvis-pulse-ring {
+    animation: none;
+  }
+}

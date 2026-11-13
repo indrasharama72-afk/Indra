@@ -1,0 +1,6 @@
+{
+  "name": "JARVIS Voice Assistant",
+  "description": "Multilingual Hindi, Hinglish, and English voice AI assistant with a natural female voice, animated thinking circles, live speech waveforms, continuous listening, memory, and owner security.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
